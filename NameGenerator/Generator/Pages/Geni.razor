@@ -1,0 +1,17 @@
+﻿@page "/name"
+
+<h1>Im so proud....</h1>
+
+<p>New name: @currentName</p>
+
+<button class="btn btn-primary" @onclick="GetName">Give my baby a fancy name</button>
+
+@code {
+    private string currentName = string.Empty;
+
+    private void GetName()
+    {
+        var geni = new Generator.Geni();
+        currentName = geni.GenerateName(5);
+    }
+}
